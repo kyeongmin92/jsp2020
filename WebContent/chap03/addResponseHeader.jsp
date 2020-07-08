@@ -17,6 +17,6 @@ response.setHeader("myHeader", "java");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>응답 헤더 사용</h1>
+<h1>응답 헤더 사용</h1> 
 </body>
 </html>

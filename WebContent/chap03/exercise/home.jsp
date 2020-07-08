@@ -10,7 +10,7 @@ request.setCharacterEncoding("utf-8");
 	boolean login = false;
 	if(id != null && id.equals("seoul")){
 		if(pw != null && pw.equals("jeju")){
-			login = true;
+			login = true; 
 		}
 	}
 %>  --%>   
