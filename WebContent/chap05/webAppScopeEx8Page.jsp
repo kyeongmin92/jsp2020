@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+pageContext.setAttribute("name", "page");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +14,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>Insert title here</title>
 </head>
 <body>
-<%
-	application.log("로그 메시지 기록");
-%>
-로그 메시지를 기록합니다.
+<h1>page Get Set Attribute</h1>
+<%= pageContext.getAttribute("name") %> <br />
+<%= pageContext.getAttribute("name", PageContext.PAGE_SCOPE) %> <br />
+<%= pageContext.getAttribute("name", PageContext.REQUEST_SCOPE) %> <br />
+<%= pageContext.getAttribute("name", PageContext.SESSION_SCOPE) %> <br />
+<%= pageContext.getAttribute("name", PageContext.APPLICATION_SCOPE) %>
 </body>
 </html>

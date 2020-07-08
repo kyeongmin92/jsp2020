@@ -11,12 +11,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>Insert title here</title>
 </head>
 <body>
 <%
-	application.log("로그 메시지 기록");
+	request.setAttribute("name", "jeju");
 %>
-로그 메시지를 기록합니다.
+<h1>Main</h1>
+<hr />
+<jsp:include page="includeActionEx4Attr.jsp"></jsp:include>
+
+<hr />
+<%= request.getAttribute("name") %>
 </body>
 </html>

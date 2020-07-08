@@ -11,12 +11,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>Info</title>
 </head>
 <body>
-<%
-	application.log("로그 메시지 기록");
-%>
-로그 메시지를 기록합니다.
+<table width="100%" border="1" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>제품번호</td> <td>XXXX</td>
+	</tr>
+	<tr>
+		<td>가격</td> <td>10,000원</td>
+	</tr>
+</table>
+
+<jsp:include page="infoSub.jsp">
+	<jsp:param value="A" name="type"/>
+</jsp:include>	
+
 </body>
 </html>

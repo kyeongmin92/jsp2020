@@ -11,11 +11,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>로그 메시지 기록2</title>
 </head>
 <body>
 <%
-	application.log("로그 메시지 기록");
+	log("로그 메시지 기록2");
 %>
 로그 메시지를 기록합니다.
 </body>

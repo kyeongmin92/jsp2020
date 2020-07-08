@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="chap05.Util" %>    
+<%
+request.setAttribute("name", "trump");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +15,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>Insert title here</title>
 </head>
 <body>
+
+<h1>request Get Set Attribute</h1>
+
 <%
-	application.log("로그 메시지 기록");
+Util.printGreeting2(pageContext);
 %>
-로그 메시지를 기록합니다.
 </body>
 </html>

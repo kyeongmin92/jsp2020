@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="chap05.User" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +12,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>Insert title here</title>
 </head>
 <body>
+<form action="" method="post">
+name: <input type="text" name="name" value="jane" /> <br />
+age: <input type="text" name="age" value="0" /> <br />
+<input type="submit" value="등록" />
+</form>
+
 <%
-	application.log("로그 메시지 기록");
+	request.setCharacterEncoding("utf-8");
+	String name = request.getParameter("name");
+	String ageStr = request.getParameter("age");
+	name = name == null ? "jane" : name ;
+	ageStr = ageStr== null ? "0" : ageStr;
+	int age = Integer.parseInt(ageStr);
+	
+	User user = new User();
+	user.setName(name);
+	user.setAge(age);
+	
+	request.setAttribute("user", user);	
 %>
-로그 메시지를 기록합니다.
+<jsp:include page="sample2IncludeAttr2.jsp"></jsp:include>
 </body>
 </html>

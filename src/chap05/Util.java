@@ -18,4 +18,11 @@ public class Util {
 			out.print("<h1>손님 반갑습니다."+"</h1>");
 		}
 	}
+	
+    public static void printGreeting2(PageContext pageContext) throws Exception{
+       ServletRequest request = pageContext.getRequest();
+       JspWriter out = pageContext.getOut();
+       Object val = request.getAttribute("name");
+           out.println(val);
+		   }
 }

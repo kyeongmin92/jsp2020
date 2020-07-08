@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %> 
+<% request.setCharacterEncoding("utf-8"); %> 
+<%
+Object o = application.getAttribute("list");
+if(o == null){
+	ArrayList<String> list = new ArrayList<>();
+	application.setAttribute("list", list);
+}
+%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +20,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>Insert title here</title>
 </head>
 <body>
+<form action="" method="post">
+<input type="text" name="name" /> <br />
+<input type="submit" value="등록" />
+</form>
+<ul>
 <%
-	application.log("로그 메시지 기록");
+ArrayList<String> l = (ArrayList<String>) application.getAttribute("list");
+
+String name = request.getParameter("name");
+if(name != null){
+	l.add(name);
+}
+
+for(String n : l){
+	out.print("<li>");
+	out.print(n);
+	out.print("</li>");
+}
 %>
-로그 메시지를 기록합니다.
+</ul>
 </body>
 </html>

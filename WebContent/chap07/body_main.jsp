@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +14,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>Insert title here</title>
 </head>
 <body>
-<%
-	application.log("로그 메시지 기록");
-%>
-로그 메시지를 기록합니다.
+
+include전 name 파라미터 값: <%= request.getParameter("name") %>
+
+<hr />
+
+<jsp:include page="body_sub.jsp">
+	<jsp:param value="최범균" name="name"/>	
+</jsp:include>
+
+<hr />
+
+include 후 name 파라미터 값: <%= request.getParameter("name") %> <br />
+<%= request.getParameterValues("name").length %>
 </body>
 </html>

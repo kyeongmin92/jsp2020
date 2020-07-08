@@ -11,12 +11,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>로그 메시지 기록</title> 
+<title>layout</title>
 </head>
 <body>
-<%
-	application.log("로그 메시지 기록");
-%>
-로그 메시지를 기록합니다.
+
+<table width="400" border="1" cellpadding="0" cellspacing="0">
+<tr>
+	<td colspan="2">
+		<jsp:include page="top.jsp">
+			<jsp:param value="layout1" name="parent"></jsp:param>
+		</jsp:include>	
+	</td>
+</tr>
+<tr>	
+	<td width="100" valign="top">
+	 	<jsp:include page="left.jsp"></jsp:include>
+	</td>
+	<td width="300" valign="top">
+		<!-- 내용 부분: 시작  -->
+		레이아웃 1
+		<br /><br /><br />
+		<!-- 내용 부분: 끝 -->		
+	</td>
+</tr>
+<tr>
+	<td colspan="2">
+		<jsp:include page="bottom.jsp"></jsp:include>
+	</td>
+</tr>
+</table>
 </body>
 </html>
