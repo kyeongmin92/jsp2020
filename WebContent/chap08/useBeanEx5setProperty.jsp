@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
+  
+    
+<jsp:useBean id="member" scope="request" class="chap08.MemberInfo">
+	<jsp:setProperty name="member" property="name" value="seoul" />
+	<jsp:setProperty name="member" property="id" value="jeju" />
+</jsp:useBean>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +21,15 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<h1><%= member.getName() %>, <%= member.getId() %></h1>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

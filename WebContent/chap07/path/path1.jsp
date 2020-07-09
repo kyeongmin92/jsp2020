@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +14,23 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<%=request.getContextPath() %> <!-- 프로젝트 경로 -->
+<h1>path1 jsp</h1>
+<a href="path2.jsp">path2</a> <br />
+<a href="sub/sub2.jsp">sub2</a> <br />
+<a href="/chap07/path/path2.jsp">path2 absolute</a> <br />
+<a href="<%=request.getContextPath() %>/chap07/path/path2.jsp">path2 absolute</a> <br />
+<a href="<%= request.getContextPath()%>/WEB-INF/webinf1.jsp)">webinf</a>
+<hr />
+
+<!-- 현재페이지 기준 (상대경로) -->
+<jsp:include page="path2.jsp"></jsp:include>
+<jsp:include page="sub/sub1.jsp"></jsp:include>
+<!-- 절대경로(/) WebContet부터 시작-->
+<jsp:include page="/chap07/path/path2.jsp"></jsp:include>
+
+<jsp:include page="/WEB-INF/webinf1.jsp"></jsp:include>
+
+
 </body>
 </html>

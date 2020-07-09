@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +14,8 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<h1>sub2 jsp</h1>
+<jsp:include page="../path2.jsp"></jsp:include>
+<jsp:include page="/chap07/path/path2.jsp"></jsp:include>
 </body>
 </html>

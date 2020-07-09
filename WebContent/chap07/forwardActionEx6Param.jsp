@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +14,8 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<h1>forward ex6 jsp</h1>
+<%= request.getParameter("name1") %> <br />
+<%= request.getParameter("name2") %>
 </body>
 </html>

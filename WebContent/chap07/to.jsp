@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,9 +11,9 @@ request.setAttribute("request name", "jsp");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>Insert title here</title>
+<title>to.jsp 실행 결과</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+이 페이지는 to.jsp가 생성한 것입니다.
 </body>
 </html>

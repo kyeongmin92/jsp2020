@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,9 +11,20 @@ request.setAttribute("request name", "jsp");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>Insert title here</title>
+<title>옵션 선택 화면</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<form action="<%= request.getContextPath()%>/chap07/view.jsp">
+
+보고 싶은 페이지 선택:
+	<select name="code" id="">
+		<option value="A">A 페이지</option>
+		<option value="B">B 페이지</option>
+		<option value="C">C 페이지</option>
+	</select>
+	
+<input type="submit" value="이동" />
+
+</form>
 </body>
 </html>

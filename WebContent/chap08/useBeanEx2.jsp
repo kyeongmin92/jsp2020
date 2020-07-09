@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
+<jsp:useBean id="myBean" class="chap08.MyBean" scope="request"></jsp:useBean>
+
+<%-- <%
+chap08.MyBean myBean = (chap08.MyBean) request.getAttribute("myBean");
+if(myBean == null){
+	myBean = new chap08.MyBean();
+	request.setAttribute("myBean", myBean);
+}
+%>  --%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +23,12 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<p>
+<%= ((chap08.MyBean)request.getAttribute("myBean")).getName() %>
+</p>
+<p>
+<%=((chap08.MyBean)request.getAttribute("myBean")).getId() %>
+</p>
+<!-- 위의 scope를 생략하면 pageContext.getAttrubete...  -->
 </body>
 </html>

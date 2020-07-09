@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="chap08.MyBean" %>
 <%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
+MyBean myBean = new MyBean();
+myBean.setName("abc");
+myBean.setId(99);
+
+request.setAttribute("myBean", myBean);
 %>    
+<%-- <jsp:useBean id="myBean" class="chap08.MyBean"></jsp:useBean> --%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +23,6 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+
 </body>
 </html>

@@ -29,6 +29,6 @@ include전 name 파라미터 값: <%= request.getParameter("name") %>
 <hr />
 
 include 후 name 파라미터 값: <%= request.getParameter("name") %> <br />
-<%= request.getParameterValues("name").length %>
+
 </body>
 </html>

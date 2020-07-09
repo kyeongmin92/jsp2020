@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +14,10 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<form action="sample3Forward4Main.jsp" method="post">
+	name: <input type="text" name="name" /> <br />
+	vip: <input type="checkbox" name="vip" /> <br />
+	<input type="submit" value="로그인" />
+</form>
 </body>
 </html>

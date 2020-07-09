@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-session.setAttribute("name", "java1");
-session.setAttribute("session name", "java");
-request.setAttribute("request name", "jsp");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +14,11 @@ request.setAttribute("request name", "jsp");
 <title>Insert title here</title>
 </head>
 <body>
-<h1>session, request Set Attribute</h1>
+<h1>forward ex5 jsp</h1>
+<jsp:forward page="forwardActionEx6Param.jsp">
+	<jsp:param value="parameter value" name="name1"/>
+	<jsp:param value="parameter value2" name="name2"/>	
+</jsp:forward>
 </body>
 </html>
+
