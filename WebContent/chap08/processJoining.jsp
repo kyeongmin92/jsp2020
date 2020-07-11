@@ -5,6 +5,13 @@
 %>    
 <jsp:useBean id="memberInfo" class="chap08.MemberInfo"></jsp:useBean>
 <jsp:setProperty name="memberInfo" property="*" />
+<!-- form에 입력한 값을 자바빈 객체에 담을 때 사용-->
+<%-- <%
+	memberInfo.setId(request.getParameter("id"));
+	memberInfo.setName(request.getParameter("name"));
+	memberInfo.setEmail(request.getParameter("email"));
+%> --%>
+
 <jsp:setProperty name="memberInfo" property="password" 
 value="<%= memberInfo.getId() %>" />
 <!DOCTYPE html>

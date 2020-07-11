@@ -23,6 +23,6 @@ request.setAttribute("myBean", myBean);
 <title>Insert title here</title>
 </head>
 <body>
-
+<jsp:forward page="useBeanEx2.jsp" />
 </body>
 </html>

@@ -7,3 +7,8 @@
 %>
 <jsp:forward page="useObject.jsp" ></jsp:forward>
 
+<%-- <%
+	MemberInfo member = new MemberInfo();
+	member.setId("madvirus");
+	member.setName("최범균");
+%> --%>

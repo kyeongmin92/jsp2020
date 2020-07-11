@@ -2,13 +2,13 @@
     pageEncoding="UTF-8"%>
 <jsp:useBean id="myBean" class="chap08.MyBean" scope="request"></jsp:useBean>
 
-<%-- <%
+<%--  <%
 chap08.MyBean myBean = (chap08.MyBean) request.getAttribute("myBean");
 if(myBean == null){
 	myBean = new chap08.MyBean();
 	request.setAttribute("myBean", myBean);
 }
-%>  --%>   
+%>   --%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,5 +30,10 @@ if(myBean == null){
 <%=((chap08.MyBean)request.getAttribute("myBean")).getId() %>
 </p>
 <!-- 위의 scope를 생략하면 pageContext.getAttrubete...  -->
+
+<%= myBean.getName() %>
+<br />
+<%= myBean.getId() %>
+
 </body>
 </html>

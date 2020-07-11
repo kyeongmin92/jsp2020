@@ -1,18 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    
-<jsp:useBean id="member" scope="request" class="chap08.MemberInfo">
-<%-- <%
-	chap08.MemberInfo member = new chap08.MemberInfo();
-	request.setAttribute("member", member);
-%> --%>
-	<jsp:setProperty name="member" property="name" value="seoul" />
-	<%-- <% member.setName("seoul"); %> --%>
-	<jsp:setProperty name="member" property="id" value="jeju" />
-	<%-- <% member.setId("jeju"); %> --%>
-</jsp:useBean>
-
+ <%@ page import="chap08.MemberInfo" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,15 +15,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><%= member.getName() %>, <%= member.getId() %></h1>
+<%
+	MemberInfo member = new MemberInfo();
+	member.setId("madvirus");
+	member.setName("최범균");
+	request.setAttribute("member", member);
+%>
+(<%= member.getId() %>) <%= member.getName() %>님 환영합니다.
 </body>
 </html>
-
-
-
-
-
-
-
-
-

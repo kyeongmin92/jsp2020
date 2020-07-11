@@ -1,18 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    
-<jsp:useBean id="member" scope="request" class="chap08.MemberInfo">
-<%-- <%
-	chap08.MemberInfo member = new chap08.MemberInfo();
-	request.setAttribute("member", member);
-%> --%>
-	<jsp:setProperty name="member" property="name" value="seoul" />
-	<%-- <% member.setName("seoul"); %> --%>
-	<jsp:setProperty name="member" property="id" value="jeju" />
-	<%-- <% member.setId("jeju"); %> --%>
-</jsp:useBean>
-
+<%@ page import="java.util.Calendar" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,18 +12,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>Insert title here</title>
+<title>현재 시간</title>
 </head>
 <body>
-<h1><%= member.getName() %>, <%= member.getId() %></h1>
+<%
+	Calendar cal = (Calendar)request.getAttribute("time");
+	
+%>
+현재시간은 =
+<%= cal.get(Calendar.HOUR) %>시
+<%= cal.get(Calendar.MINUTE) %>분
+<%= cal.get(Calendar.SECOND) %>초 입니다.
 </body>
 </html>
-
-
-
-
-
-
-
-
-
