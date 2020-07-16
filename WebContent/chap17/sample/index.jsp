@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.*" %>        
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,26 +16,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%--
-forEach의 varStatus 속성 (javax.servlet.jsp.jstl.core.LoopTagStatus)
- --%>
- <%
- String[] arr = {"java", "script", "css", "python", "matrix", "c++"};
- request.setAttribute("list", arr);
- %>
- <table class="table">
- <tr>
- <th>index</th>
- <th>count</th>
- <th>item</th>
- </tr>
- <c:forEach items="${list }" var="item" varStatus="status" begin="3">
- <tr>
- <td>${status.index }</td>  <!-- 현재 실행 인덱스 -->
- <td>${status.count }</td>  <!-- 루프 실행 횟수 -->
- <td>${item }</td> 
- </tr> 
- </c:forEach>
- </table>
+<h1>Main Page</h1>
+
+<c:if test="${empty user }" >
+<form action="${pageContext.request.contextPath }/sample/login" method="post">
+id: <input type="text" name="id" /> <br />
+pw: <input type="password" name="pw" /> <br />
+<input type="submit" value="로그인"/>
+</form>
+</c:if>
+
+<c:if test="${not empty user }"> 
+${user }님 반갑습니다. <br />
+<a href="${pageContext.request.contextPath }/sample/logout">로그아웃</a>
+</c:if>
 </body>
 </html>
+
+
+
+
+
+
+
+

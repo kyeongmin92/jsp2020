@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page import="java.util.*" %>        
 <!DOCTYPE html>
 <html>
@@ -16,26 +17,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%--
-forEach의 varStatus 속성 (javax.servlet.jsp.jstl.core.LoopTagStatus)
- --%>
- <%
- String[] arr = {"java", "script", "css", "python", "matrix", "c++"};
- request.setAttribute("list", arr);
- %>
- <table class="table">
- <tr>
- <th>index</th>
- <th>count</th>
- <th>item</th>
- </tr>
- <c:forEach items="${list }" var="item" varStatus="status" begin="3">
- <tr>
- <td>${status.index }</td>  <!-- 현재 실행 인덱스 -->
- <td>${status.count }</td>  <!-- 루프 실행 횟수 -->
- <td>${item }</td> 
- </tr> 
- </c:forEach>
- </table>
+ 
+ <!-- response.sendRedirect()처럼 지정한 페이지로 리다이렉트 시켜주는 기능 -->
+ <c:redirect url="http://search.naver.com/search.naver">
+ 	<c:param name="where" value="post" />
+ 	<c:param name="sm" value="tab_jum" />
+ 	<c:param name="query" value="이대 맛집" /> 	
+ </c:redirect>
 </body>
 </html>
