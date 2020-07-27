@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 //@WebServlet("/ControllerUsingURI")
 public class ControllerUsingURI extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	// <커맨드, 핸들러인스턴스> 매핑 정보 저장
 	private Map<String, CommandHandler> map = new HashMap<>();
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,6 +31,7 @@ public class ControllerUsingURI extends HttpServlet {
     @Override
     public void init() throws ServletException {
     	super.init();
+    	// FileInputStream클래스는 InputStream 클래스를 상속받은 후손 클래스로, 스트림을 생성하는 클래스
     	FileInputStream fis = null;
     	try {
     		String filePath = getInitParameter("configFile");
@@ -37,20 +39,27 @@ public class ControllerUsingURI extends HttpServlet {
     		
     		fis = new FileInputStream(realPath);
     		
+    		//Properties는 프로퍼티를 관리할 때 사용하는 클래스 (이름, 값)으로 구성
     		Properties props = new Properties();
+    		//load 메서드를 사용하면 설정 파일로부터 프로퍼티 정보를 읽어올 수 있음
     		props.load(fis);
     		
+    		//Enumeration 인터페이스는 객체들의 집합(Vector)에서 각각의 객체들을 한순간에 하나씩 처리할 수 있는 메소드를 제공하는 켈렉션
     		Enumeration<String> keys = (Enumeration<String>) 
     				props.propertyNames();
     		
+    		//hasMoreElements => Vector로 부터 생성된 Enumeration의 요소가 있으면 true, 아니면 false 반환
     		while (keys.hasMoreElements()) {
+    			//nextElement =>  Enumeration 내의 다음 요소를 반환한다. 
     			String key = keys.nextElement();
     			String className = props.getProperty(key);
     			
     			Class<CommandHandler> clazz 
     			= (Class<CommandHandler>) Class.forName(className);
+    			// forName("클래스명")에 무엇을 넣느냐에 따라 객체가 다름    			
     			
     			CommandHandler comm = clazz.newInstance();
+    			// newInstance() 메소드는 Class가 나타내는  클래스의 인스턴스 생성
     			
     			map.put(key, comm);
     		}
